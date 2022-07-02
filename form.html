@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form register</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="card">
+		<form action="" id="input">
+			<p>Tên: <input id="textbox1" name="textname" type="text"></p>
+			<p>Email: <input id="textbox2" name="textemail" type="text"></p>
+			<p>Giới tính:</p>
+				<input type="radio" name="sex" value="Nam"> Nam
+				<input type="radio" name="sex" Value="Nu"> Nữ
+			<p>Quốc tịch: 
+				<select name="contry" id="starselect">
+					<option selected="selected"> </option>
+     				<option value="Viet Nam">Viet Nam</option>
+     				<option value="Australia">Australia</option>
+     				<option value="Campuchia">Campuchia</option>
+     				<option value="Lao">Lao</option>
+				</select>
+			</p>
+			<div>
+				<p>Sở thích: 
+					&nbsp;<input type="checkbox" name="coffee" value="Lập trình"> Lập trình<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="coffee" value="Du Lịch"> Du Lịch<br>
+				</p>
+			</div>
+			<br>
+			<input type="button" onclick="myFunction()" value="Chấp nhận">
+			<input type="button" onclick="cancel()" value="Hủy">
+		</form>
+	</div>
+	<script type="text/javascript">
+		function myFunction() {
+			var sex = document.forms["input"].sex;
+			var coffee = document.forms["input"];
+			var textbox1=document.getElementById("textbox1").value;
+			var textbox2=document.getElementById("textbox2").value;
+			var txtsex = "";
+			for (i = 0; i < sex.length; i++) {
+  				if (sex[i].checked) {
+     				txtsex = txtsex + sex[i].value + " ";
+   				}
+			}
+			var txt = "";
+   			var i;
+   			for (i = 0; i < coffee.length; i++) {
+      			if (coffee[i].checked) {
+        			txt = txt + coffee[i].value + " ";
+      			}
+   			}
+
+  			alert("Tên: " + textbox1 + "\nEmail: " + textbox2 + "\nGiới tính: " + txtsex + "\nQuốc tịch: " + document.forms["input"].contry.value + "\nSở thích: " + txt)
+		}
+		function cancel() {
+  			document.getElementById("input").reset();
+		}
+	</script>
+</body>
+</html>
