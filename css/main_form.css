@@ -33,6 +33,7 @@ body {
 }
 
 .button {
+	margin-top: 10px;
 	width: 100px;
     height: 40px;
     border: none;
@@ -51,25 +52,3 @@ fieldset {
 	padding: 4px;
 	border: 1px solid #BABABA;
 }
-
-/*@media screen and (max-width: 800px) {
-  	.form_input {
-  		position: absolute;
-  		top: 150%;
-  		left: 50%;
-		transform: translate(-50%, -50%);
-  		width: 300px;
-  		padding: 10px 20px;
-  	}
-  	.txt {
-		width: 258px;
-	}
-	.form_output {
-		width: 300px;
-		padding: 10px 20px;
-		position: absolute;
-  		top: 2000%;
-  		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-}*/
