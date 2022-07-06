@@ -25,7 +25,6 @@ body {
 }
 
 .form_output {
-	/*height: 600px;*/
 	float: center;
 	padding: 15px 40px;
 	width: 400px;
@@ -33,6 +32,7 @@ body {
 }
 
 .button {
+	cursor: pointer;
 	margin-top: 10px;
 	width: 100px;
     height: 40px;
