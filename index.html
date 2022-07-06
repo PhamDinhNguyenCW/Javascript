@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form</title>
+	<link rel="short cut" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/main_form.css">
+	<link rel="stylesheet" type="text/css" href="css/table-phone.css" media="screen and (max-width: 800px)" />
+</head>
+<body>
+	<div class="card">
+		<div class="form_input">
+			<form action="" id="input">
+				<p>
+					<label for="name" >Họ Tên</label><br>
+					<input id="textname" type="txtname" class="txt">
+				</p>
+				<p>
+					<label for="mail">Email</label><br>
+					<input id="textmail" type="txtmail" class="txt">
+				</p>
+				<fieldset>
+					<legend>Giới tính</legend>
+						<input type="radio" id="gioitinh" name="sex" value="Nam"> Nam
+						<input type="radio" id="gioitinh" name="sex" Value="Nữ"> Nữ
+				</fieldset>
+				<label>Quốc tịch</label> 
+				<select id="quoctich" class="txt">
+					<option value="Chưa chọn"> Chọn quốc tịch </option>
+     				<option value="Việt Nam">Việt Nam</option>
+     				<option value="Australia">Australia</option>
+     				<option value="Campuchia">Campuchia</option>
+     				<option value="Lào">Lào</option>
+				</select>
+				</p>
+				<p>
+          			<fieldset>
+            			<legend>Sở thích</legend>
+            			<input type="checkbox" name="st" value="Du Lịch"> Du lịch<br>
+       					<input type="checkbox" name="st" value="Lập trình"> Lập trình<br>
+       					<input type="checkbox" name="st" value="Chơi game"> Chơi game<br>
+       					<input type="checkbox" name="st" value="Đá bóng"> Đá bóng<br>
+       					<input type="checkbox" name="st" value="Khác"> Khác<br>
+          			</fieldset>
+      			</p>
+			<br>
+				<input type="button" onclick="myFunction()" value=" Chấp nhận " class="button">
+				<input type="button" onclick="cancel()" value=" Hủy " class="button">
+			</form>
+		</div>
+		<div class="form_output">
+			<p id="textname__o">Tên: </p><br>
+			<p id="textmail__o">Email: </p><br>
+			<p id="textsex__o">Giới tính: </p><br>
+			<p id="textcontry__o">Quốc tịch: </p><br>
+			<p id="textst__o">Sở thích: </p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function myFunction() {
+			var name = document.getElementById("textname").value;
+			var mail = document.getElementById("textmail").value;
+			var sex = document.forms["input"].sex;
+			var quoctich = document.getElementById("quoctich").value;
+			var st = document.forms[0].st;
+			document.getElementById("textname__o").innerHTML="Tên:  "+ name;
+			document.getElementById("textmail__o").innerHTML="Email: "+ mail;
+			var txtsex = "";
+			for (i = 0; i < sex.length; i++) {
+  				if (sex[i].checked) {
+     				txtsex = txtsex + sex[i].value + " ";
+   				}
+			}
+			document.getElementById("textsex__o").innerHTML="Giới tính: " + txtsex;
+			document.getElementById("textcontry__o").innerHTML= "Quốc tịch: " + quoctich;
+			var txtst = "";
+			var i;
+   			for (i = 1; i < st.length; i++) {
+      			if (st[i].checked) {
+        			txtst = txtst + st[i].value + " ";
+      			}
+   			}
+   			document.getElementById("textst__o").innerHTML="Sở thích: " + txtst;
+		}
+		function cancel() {
+  			document.getElementById("input").reset();
+		}
+	</script>
+</body>
+</html>
